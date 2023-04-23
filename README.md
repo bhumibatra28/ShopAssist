@@ -1,6 +1,7 @@
 # Welcome to ShopAssist!
 
 This is a shopping assistant just like ChatGPT but for E-Commerce
+[Link to FrontEnd](https://github.com/hitenvats16/ShopAssist_frontEnd)
 
 # What you need in order to run it locally
 
