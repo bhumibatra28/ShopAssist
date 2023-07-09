@@ -1,9 +1,12 @@
+from routes.index import appRouter
+from constants.origins import origins
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
+import os
 
-from constants.origins import origins
-from routes.index import appRouter
+PORT = os.environ("PORT") if os.environ("PORT") else 8000
+
 
 app = FastAPI()
 
@@ -16,11 +19,14 @@ app.add_middleware(
 )
 
 # Confirm Server is Running
+
+
 @app.get("/")
 def read_root():
     return {"message": "App is up and running"}
 
+
 app.include_router(appRouter)
 
 if __name__ == '__main__':
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
+    uvicorn.run("main:app", host="127.0.0.1", port=PORT, reload=True)
