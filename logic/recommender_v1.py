@@ -3,7 +3,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 # Load data
-data = pd.read_csv('data.csv')
+data = pd.read_csv('data/data.csv')
 
 # Clean data
 data['text'] = data['title'] + ' ' + data['breadcrumbs']
