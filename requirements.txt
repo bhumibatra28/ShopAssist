@@ -9,7 +9,7 @@ distlib==0.3.6
 exceptiongroup==1.1.0
 fastapi==0.95.1
 filelock==3.8.0
-gensim==4.3.1
+gensim
 h11==0.14.0
 httptools==0.5.0
 idna==3.4
