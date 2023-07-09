@@ -4,10 +4,11 @@ from nltk.tokenize import word_tokenize
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from joblib import load
+import nltk
 
 # Downloading contents of NLTK
-# nltk.download('punkt')
-# nltk.download('stopwords')
+nltk.download('punkt')
+nltk.download('stopwords')
 
 # Load data
 data = pd.read_json('data/data.json')
