@@ -12,9 +12,8 @@ This is a shopping assistant just like ChatGPT but for E-Commerce
 
 Follow below commands in sequence
 
- 1. `cd backend/`
- 2. `pip install -r requirements.txt`
- 3. `python main.py`
+ 1. `pip install -r requirements.txt`
+ 2. `python main.py`
 
 ## For Frontend
 
@@ -24,7 +23,7 @@ Follow below commands in sequence
  2. `yarn install`
  3. `yarn start`
 
-## Points to noticed
+## Points to be noticed
 
  1. Sometimes Google login doesn't work so in that case, refresh the windows and then try again.
- 2. After google login, If app doesn't redirect you to chat page then you can manually replace `/login` with `/chat`  inside search bar.
+ 2. After google login, If app doesn't redirect you to chat page then you can manually replace `/login` with `/chat` inside search bar to start chating.
