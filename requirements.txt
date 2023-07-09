@@ -3,5 +3,5 @@ nltk
 numpy
 pandas
 pydantic
-sklearn
+scikit-learn
 uvicorn
