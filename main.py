@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 import os
 
-PORT = os.environ("PORT") if os.environ("PORT") else 8000
+PORT = os.environ.get("PORT") if os.environ.get("PORT") else 8000
 
 
 app = FastAPI()
