@@ -5,3 +5,4 @@ pandas
 pydantic
 scikit-learn
 uvicorn
+scipy
