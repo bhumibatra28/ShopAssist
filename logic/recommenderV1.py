@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-from joblib import load
+from joblib import load, dump
 
 # Load data
 data = pd.read_csv('data/data.csv')
@@ -10,13 +10,17 @@ data = pd.read_csv('data/data.csv')
 data['text'] = data['title'] + ' ' + data['breadcrumbs']
 data['text'] = data['text'].fillna('')
 
-'''
 # Create vectorizer
 vectorizer = CountVectorizer()
 vectorizer.fit(data['text'])
+
+'''
+print('dump started for v1')
+dump(vectorizer,'recommenderV1.joblib')
+print('dump completed for v2')
 '''
 
-vectorizer = load('logic/MLModels/recommenderV1.joblib')
+vectorizer = load('mlModels/recommenderV1.joblib')
 
 def getTopSimilarProducts(query, numRecommendations=1):
     query_vector = vectorizer.transform([query])

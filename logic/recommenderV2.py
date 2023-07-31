@@ -3,7 +3,7 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-from joblib import load
+from joblib import load, dump
 import nltk
 
 # Downloading contents of NLTK
@@ -34,12 +34,16 @@ stop_words = set(stopwords.words('english'))
 data['text'] = data['text'].apply(lambda x: ' '.join(
     [word for word in word_tokenize(x) if not word in stop_words]))
 
-'''
 # Create vectorizer
 vectorizer = TfidfVectorizer().fit(data['text'])
+
+'''
+print('dump startedf for v2')
+dump(vectorizer,'recommenderV2.joblib')
+print('dump completed for v2')
 '''
 
-vectorizer = load('logic/MLModels/recommenderV2.joblib')
+vectorizer = load('mlModels/recommenderV2.joblib')
 
 def getTopSimilarProducts(query, num_recommendations=5):
     query = ' '.join([word.lower()
