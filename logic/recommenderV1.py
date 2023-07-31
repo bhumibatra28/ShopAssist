@@ -11,16 +11,14 @@ data['text'] = data['title'] + ' ' + data['breadcrumbs']
 data['text'] = data['text'].fillna('')
 
 # Create vectorizer
-vectorizer = CountVectorizer()
-vectorizer.fit(data['text'])
+# vectorizer = CountVectorizer()
+# vectorizer.fit(data['text'])
 
-'''
-print('dump started for v1')
-dump(vectorizer,'recommenderV1.joblib')
-print('dump completed for v2')
-'''
+# print('dump started for v1')
+# dump(vectorizer,'recommenderV1.joblib')
+# print('dump completed for v2')
 
-vectorizer = load('mlModels/recommenderV1.joblib')
+vectorizer = load('staticModels/recommenderV1.joblib')
 
 def getTopSimilarProducts(query, numRecommendations=1):
     query_vector = vectorizer.transform([query])

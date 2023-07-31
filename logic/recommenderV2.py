@@ -35,15 +35,13 @@ data['text'] = data['text'].apply(lambda x: ' '.join(
     [word for word in word_tokenize(x) if not word in stop_words]))
 
 # Create vectorizer
-vectorizer = TfidfVectorizer().fit(data['text'])
+# vectorizer = TfidfVectorizer().fit(data['text'])
 
-'''
-print('dump startedf for v2')
-dump(vectorizer,'recommenderV2.joblib')
-print('dump completed for v2')
-'''
+# print('dump startedf for v2')
+# dump(vectorizer,'recommenderV2.joblib')
+# print('dump completed for v2')
 
-vectorizer = load('mlModels/recommenderV2.joblib')
+vectorizer = load('staticModels/recommenderV2.joblib')
 
 def getTopSimilarProducts(query, num_recommendations=5):
     query = ' '.join([word.lower()
